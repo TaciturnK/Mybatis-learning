@@ -7,7 +7,7 @@
 	<packaging>pom</packaging>
 	<description>Mybatis学习代码</description>
 	<modules>
-		<module>Mybatis-01</module>
+		<module>../Mybatis-01</module>
 	</modules>
 
 	<dependencies>

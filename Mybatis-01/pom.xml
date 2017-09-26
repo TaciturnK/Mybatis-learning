@@ -5,6 +5,7 @@
 		<groupId>com.taowd.mybatis</groupId>
 		<artifactId>Mybatis-learning</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../Mybatis-learning/pom.xml</relativePath>
 	</parent>
 	<artifactId>Mybatis-01</artifactId>
 
