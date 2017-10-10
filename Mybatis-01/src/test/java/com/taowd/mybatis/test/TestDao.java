@@ -48,7 +48,7 @@ public class TestDao {
 		// 注意此处默认不是自动提交事务的
 		SqlSession session = MybatisUtils.getFactory().openSession(true);// 创建自动提交事物的Session对象
 		String sql = "mapper.userMapper.insertUser";
-		User user = new User(-1, "王五", 24);
+		User user = new User(5, "王五", 24);
 		int result = session.insert(sql, user);
 		logger.info("影响行数：" + result);
 	}
