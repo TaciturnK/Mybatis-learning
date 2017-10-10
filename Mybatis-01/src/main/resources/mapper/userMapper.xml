@@ -6,4 +6,33 @@
 		resultType="com.taowd.mybatis.entry.User">
 		select * from users where id=#{id}
 	</select>
+
+	<!--CRUD功能演示 -->
+
+	<insert id="insertUser" parameterType="com.taowd.mybatis.entry.User">
+		insert into users(name,
+		age) values(#{name}, #{age});
+	</insert>
+
+	<delete id="deleteUser" parameterType="int">
+		delete from users where
+		id=#{id}
+	</delete>
+
+	<update id="updateUser" parameterType="com.taowd.mybatis.entry.User">
+		update users set
+		name=#{name},age=#{age} where id=#{id}
+	</update>
+
+	<select id="selectUser" parameterType="int"
+		resultType="com.taowd.mybatis.entry.User">
+		select * from users where id=#{id}
+	</select>
+
+	<select id="selectAllUsers" resultType="com.taowd.mybatis.entry.User">
+		select * from users
+	</select>
+
+
+
 </mapper>

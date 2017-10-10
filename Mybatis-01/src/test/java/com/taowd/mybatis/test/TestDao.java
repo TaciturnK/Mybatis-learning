@@ -2,6 +2,7 @@ package com.taowd.mybatis.test;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -12,11 +13,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.taowd.mybatis.entry.User;
+import com.taowd.mybatis.utils.MybatisUtils;
 
 public class TestDao {
 
 	private static final Logger logger = LoggerFactory.getLogger(TestDao.class);
 
+	/**
+	 * 功能：查询单条数据
+	 * @throws IOException
+	 */
 	@Test
 	public void TestGetUser() throws IOException {
 
@@ -31,7 +37,62 @@ public class TestDao {
 		String statement = "mapper.userMapper" + ".getUser";
 		// 执行查询返回一个唯一user对象的sql
 		User user = session.selectOne(statement, 1);
-		logger.info(user.toString());
+		logger.info("查询结果：" + user.toString());
+	}
+
+	/**
+	 * 功能：测试新增功能
+	 */
+	@Test
+	public void TestAddUser() {
+		// 注意此处默认不是自动提交事务的
+		SqlSession session = MybatisUtils.getFactory().openSession(true);// 创建自动提交事物的Session对象
+		String sql = "mapper.userMapper.insertUser";
+		User user = new User(-1, "王五", 24);
+		int result = session.insert(sql, user);
+		logger.info("影响行数：" + result);
+	}
+
+	/**
+	 * 功能：测试更新功能
+	 */
+	@Test
+	public void TestUpdateUser() {
+		SqlSession session = MybatisUtils.getFactory().openSession(true);
+		String sql = "mapper.userMapper.updateUser";
+		User user = new User();
+		user.setId(2);
+		user.setName("诸葛小坏");
+		user.setAge(88);
+		int result = session.update(sql, user);
+		logger.info("影响行数：" + result);
+
+	}
+
+	/**
+	 * 功能：测试删除功能
+	 */
+	@Test
+	public void TestDeleteUser() {
+		SqlSession session = MybatisUtils.getFactory().openSession(true);
+		String sql = "mapper.userMapper.deleteUser";
+		int result = session.delete(sql, 5);
+		logger.info("影响行数：" + result);
+
+	}
+
+	/**
+	 * 功能：测试查询所有信息
+	 */
+	@Test
+	public void TestQueryAllUser() {
+		SqlSession session = MybatisUtils.getFactory().openSession(true);
+		String sql = "mapper.userMapper.selectAllUsers";
+		List<User> listUser = session.selectList(sql);
+		for (User user : listUser) {
+			logger.info(user.toString());
+		}
+
 	}
 
 }

@@ -24,6 +24,5 @@
 
 	<mappers>
 		<mapper resource="mapper/userMapper.xml" />
-
 	</mappers>
 </configuration>
