@@ -6,7 +6,8 @@
 
 	<!-- 配置实体类的别名 -->
 	<typeAliases>
-
+		<typeAlias type="com.taowd.mybatis.entry.Classes" alias="_Classes" />
+		<typeAlias type="com.taowd.mybatis.entry.Teacher" alias="_Teacher" />
 		<typeAlias type="com.taowd.mybatis.entry.Orders" alias="_Orders" />
 		<package name="com.taowd.mybatis.entry" />
 	</typeAliases>
@@ -27,5 +28,6 @@
 		<mapper resource="mapper/userMapper.xml" />
 		<mapper class="com.taowd.mybatis.services.UserMapper" />
 		<mapper resource="mapper/ordersMapper.xml" />
+		<mapper resource="mapper/ClassMapper.xml" />
 	</mappers>
 </configuration>
