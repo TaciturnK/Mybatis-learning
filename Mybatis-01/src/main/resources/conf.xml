@@ -6,7 +6,8 @@
 
 	<!-- 配置实体类的别名 -->
 	<typeAliases>
-		<!-- <typeAlias type="com.atguigu.day03_mybaits.test1.User" alias="_User"/> -->
+
+		<typeAlias type="com.taowd.mybatis.entry.Orders" alias="_Orders" />
 		<package name="com.taowd.mybatis.entry" />
 	</typeAliases>
 	<!-- development : 开发模式 work : 工作模式 -->
@@ -25,5 +26,6 @@
 	<mappers>
 		<mapper resource="mapper/userMapper.xml" />
 		<mapper class="com.taowd.mybatis.services.UserMapper" />
+		<mapper resource="mapper/ordersMapper.xml" />
 	</mappers>
 </configuration>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ordersMapper">
+	<!-- 解决方案1：在Sql中使用别名 -->
+	<select id="selectOrder" parameterType="int" resultType="_Orders">
+		select
+		order_id id, order_no no,order_price price from orders where
+		order_id=#{id}
+	</select>
+
+	<!-- 解决方案2：使用resultMap进行映射 -->
+	<select id="selectOrderResultMap" parameterType="int" resultMap="orderResultMap">
+		select * from orders where order_id=#{id}
+	</select>
+	<resultMap type="_Orders" id="orderResultMap">
+		<id property="id" column="order_id" />
+		<result property="no" column="order_no" />
+		<result property="price" column="order_price" />
+	</resultMap>
+
+</mapper>
