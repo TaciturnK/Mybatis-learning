@@ -1,10 +1,21 @@
 package com.taowd.mybatis.entry;
 
+import java.util.List;
+
 public class Classes {
 
 	private String id;
 	private String name;
 	private Teacher teacher;
+	private List<Student> students;
+
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
 
 	public String getId() {
 		return id;
@@ -32,7 +43,7 @@ public class Classes {
 
 	@Override
 	public String toString() {
-		return "Classes [id=" + id + ", name=" + name + ", teacher=" + teacher + "]";
+		return "Classes [id=" + id + ", name=" + name + ", teacher=" + teacher + ", students=" + students + "]";
 	}
 
 }

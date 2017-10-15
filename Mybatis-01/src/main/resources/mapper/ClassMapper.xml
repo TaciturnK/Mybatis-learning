@@ -36,6 +36,29 @@
 		t_id id, t_name name FROM teacher WHERE t_id=#{id}
 	</select>
 
+	<!-- 一对多关联查询：嵌套查询 -->
+	<select id="getClass3" parameterType="int" resultMap="ClassResultMap3">
+		select * from class c, teacher t,student s where c.teacher_id=t.t_id and
+		c.C_id=s.class_id and c.c_id=#{id}
+
+	</select>
+
+	<resultMap type="_Classes" id="ClassResultMap3">
+		<id property="id" column="c_id" />
+		<result property="name" column="c_name" />
+		<association property="teacher" column="teacher_id"
+			javaType="_Teacher">
+			<id property="id" column="t_id" />
+			<result property="name" column="t_name" />
+		</association>
+		<!-- ofType指定Student集合中的对象类型 -->
+		<collection property="students" ofType="_Student">
+			<id property="id" column="s_id" />
+			<result property="name" column="s_name" />
+		</collection>
+	</resultMap>
+
+
 
 
 
