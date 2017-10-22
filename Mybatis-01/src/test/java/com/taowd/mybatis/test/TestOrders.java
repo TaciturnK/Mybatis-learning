@@ -13,7 +13,7 @@ public class TestOrders {
 	private static final Logger logger = LoggerFactory.getLogger(TestOrders.class);
 
 	@Test
-	public void TestGetOrder() {
+	public void testGetOrder() {
 		// 注意此处默认不是自动提交事务的
 		SqlSession session = MybatisUtils.getFactory().openSession(true);// 创建自动提交事物的Session对象
 		String sql = "mapper.ordersMapper.selectOrder";
@@ -23,7 +23,7 @@ public class TestOrders {
 	}
 
 	@Test
-	public void TestGetOrderByResultMap() {
+	public void testGetOrderByResultMap() {
 		// 注意此处默认不是自动提交事务的
 		SqlSession session = MybatisUtils.getFactory().openSession(true);// 创建自动提交事物的Session对象
 		String sql = "mapper.ordersMapper.selectOrderResultMap";

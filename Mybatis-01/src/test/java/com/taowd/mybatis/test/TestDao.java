@@ -24,7 +24,7 @@ public class TestDao {
 	 * @throws IOException
 	 */
 	@Test
-	public void TestGetUser() throws IOException {
+	public void testGetUser() throws IOException {
 
 		String resource = "conf.xml";
 		// 加载mybatis的配置文件（它也加载关联的映射文件）
@@ -44,7 +44,7 @@ public class TestDao {
 	 * 功能：测试新增功能
 	 */
 	@Test
-	public void TestAddUser() {
+	public void testAddUser() {
 		// 注意此处默认不是自动提交事务的
 		SqlSession session = MybatisUtils.getFactory().openSession(true);// 创建自动提交事物的Session对象
 		String sql = "mapper.userMapper.insertUser";
@@ -57,7 +57,7 @@ public class TestDao {
 	 * 功能：测试更新功能
 	 */
 	@Test
-	public void TestUpdateUser() {
+	public void testUpdateUser() {
 		SqlSession session = MybatisUtils.getFactory().openSession(true);
 		String sql = "mapper.userMapper.updateUser";
 		User user = new User();
@@ -73,7 +73,7 @@ public class TestDao {
 	 * 功能：测试删除功能
 	 */
 	@Test
-	public void TestDeleteUser() {
+	public void testDeleteUser() {
 		SqlSession session = MybatisUtils.getFactory().openSession(true);
 		String sql = "mapper.userMapper.deleteUser";
 		int result = session.delete(sql, 5);
@@ -85,7 +85,7 @@ public class TestDao {
 	 * 功能：测试查询所有信息
 	 */
 	@Test
-	public void TestQueryAllUser() {
+	public void testQueryAllUser() {
 		SqlSession session = MybatisUtils.getFactory().openSession(true);
 		String sql = "mapper.userMapper.selectAllUsers";
 		List<User> listUser = session.selectList(sql);

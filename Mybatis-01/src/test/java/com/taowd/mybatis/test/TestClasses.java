@@ -24,7 +24,7 @@ public class TestClasses {
 	}
 
 	@Test
-	public void GetClassessInfo2() {
+	public void getClassessInfo2() {
 
 		SqlSession session = MybatisUtils.getFactory().openSession();// 因为仅仅是查询，所以不用自动提交事务
 		String sql = "mapper.ClassMapper.getClass2";

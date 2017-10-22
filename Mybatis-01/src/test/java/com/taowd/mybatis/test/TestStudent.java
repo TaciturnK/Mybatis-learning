@@ -13,10 +13,20 @@ public class TestStudent {
 	private static final Logger logger = LoggerFactory.getLogger(TestStudent.class);
 
 	@Test
-	public void TestStudent() {
+	public void testStudent1() {
 		// 注意此处默认不是自动提交事务的
 		SqlSession session = MybatisUtils.getFactory().openSession(true);// 创建自动提交事物的Session对象
 		String sql = "mapper.ClassMapper.getClass3";
+		Classes result = (Classes) session.selectOne(sql, 1);
+		logger.info("影响行数：" + result.toString());
+
+	}
+
+	@Test
+	public void testStudent2() {
+		// 注意此处默认不是自动提交事务的
+		SqlSession session = MybatisUtils.getFactory().openSession(true);// 创建自动提交事物的Session对象
+		String sql = "mapper.ClassMapper.getClaasess4";
 
 		Classes result = (Classes) session.selectOne(sql, 1);
 		logger.info("影响行数：" + result.toString());

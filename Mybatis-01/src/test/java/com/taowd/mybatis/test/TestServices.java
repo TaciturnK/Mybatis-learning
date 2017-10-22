@@ -17,7 +17,7 @@ public class TestServices {
 	private static final Logger logger = LoggerFactory.getLogger(TestDao.class);
 
 	@Test
-	public void TestAddUser() {
+	public void testAddUser() {
 		// 注意此处默认不是自动提交事务的
 		SqlSession session = MybatisUtils.getFactory().openSession(true);// 创建自动提交事物的Session对象
 
