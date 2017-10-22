@@ -35,16 +35,20 @@
 	</select>
 
 	<!-- 测试动态SQL和模糊查询 -->
-	<select id="getUser" parameterType="com.taowd.mybatis.entry.ConditionUser"
+	<select id="getUser2" parameterType="com.taowd.mybatis.entry.ConditionUser"
 		resultType="com.taowd.mybatis.entry.User">
 		select * from d_user where age>=#{minAge} and age&lt;=#{maxAge}
 		<if test='name!="%null%"'>and name like #{name}</if>
 	</select>
 
-	<!-- <select id="getUser" parameterType="com.atguigu.day03_mybatis.test6.ConditionUser" 
-		resultType="com.atguigu.day03_mybatis.test6.User"> select * from d_user where 
-		age>=#{minAge} and age&lt;=#{maxAge} <if test='name!="%null%"'>and name like 
-		#{name}</if> </select> -->
+	<!-- 测试调用存储过程 -->
+	<select id="getUserCount" statementType="CALLABLE" parameterMap="getCountMap">
+		call mybatis.ges_user_count(?,?)
+	</select>
+	<parameterMap type="java.util.Map" id="getCountMap">
+		<parameter property="sex_id" mode="IN" javaType="INTEGER" />
+		<parameter property="user_count" mode="OUT" jdbcType="INTEGER" />
+	</parameterMap>
 
 
 
