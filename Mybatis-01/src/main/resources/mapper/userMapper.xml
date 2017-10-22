@@ -2,6 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.userMapper">
 
+	<cache eviction="FIFO"  flushInterval="60000"  size="512"  readOnly="true" />
+	<!-- // eviction="FIFO" 回收策略为先进先出
+		 // flushInterval="60000" 自动刷新时间60s 
+		 //	size="512" 最多缓存512个引用对象 
+		 // readOnly="true" 只读
+	 -->
+
 
 	<!--CRUD功能演示 -->
 
@@ -49,6 +56,20 @@
 		<parameter property="sex_id" mode="IN" javaType="INTEGER" />
 		<parameter property="user_count" mode="OUT" jdbcType="INTEGER" />
 	</parameterMap>
+
+	<!-- 测试缓存 -->
+	<select id="getCachUser" parameterType="int" resultType="_CUser">
+		select *
+		from c_user where id = #{id}
+	</select>
+
+	<update id="updateCachUser" parameterType="_CUser">
+		update c_user set
+		name=#{name},age=#{age} where id=#{id}
+
+	</update>
+
+
 
 
 

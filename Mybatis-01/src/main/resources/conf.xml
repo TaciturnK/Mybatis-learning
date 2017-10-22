@@ -6,6 +6,7 @@
 
 	<!-- 配置实体类的别名 -->
 	<typeAliases>
+		<typeAlias type="com.taowd.mybatis.entry.User" alias="_CUser" />
 		<typeAlias type="com.taowd.mybatis.entry.Student" alias="_Student" />
 		<typeAlias type="com.taowd.mybatis.entry.Classes" alias="_Classes" />
 		<typeAlias type="com.taowd.mybatis.entry.Teacher" alias="_Teacher" />

@@ -1,6 +1,17 @@
 package com.taowd.mybatis.entry;
 
-public class User {
+import java.io.Serializable;
+
+/**
+ * 
+ * @author Taowd
+ *
+ */
+public class User implements Serializable {
+	/**
+	 * ∂‘œÛID
+	 */
+	private static final long serialVersionUID = 9061714495831247949L;
 	private int id;
 	private String name;
 	private int age;
