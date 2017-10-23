@@ -2,12 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.userMapper">
 
-	<cache eviction="FIFO"  flushInterval="60000"  size="512"  readOnly="true" />
-	<!-- // eviction="FIFO" 回收策略为先进先出
-		 // flushInterval="60000" 自动刷新时间60s 
-		 //	size="512" 最多缓存512个引用对象 
-		 // readOnly="true" 只读
-	 -->
+	<cache eviction="FIFO" flushInterval="60000" size="512" readOnly="true" />
+	<!-- // eviction="FIFO" 回收策略为先进先出 // flushInterval="60000" 自动刷新时间60s // 
+		size="512" 最多缓存512个引用对象 // readOnly="true" 只读 -->
 
 
 	<!--CRUD功能演示 -->
@@ -15,6 +12,22 @@
 	<insert id="insertUser" parameterType="com.taowd.mybatis.entry.User">
 		insert into users(name,
 		age) values(#{name}, #{age});
+	</insert>
+
+	<insert id="insertUser2" parameterType="com.taowd.mybatis.entry.User"
+		useGeneratedKeys="true" keyColumn="id">
+		insert into users(name,
+		age)
+		values(#{name}, #{age});
+	</insert>
+
+	<insert id="addGuser" parameterType="com.taowd.mybatis.entry.Guser">
+		<selectKey keyProperty="id" resultType="java.lang.String"
+			order="BEFORE">
+			select replace(uuid(),'-','') from dual
+		</selectKey>
+		insert into g_users (id,NAME,age) values
+		(#{id},#{name},#{age})
 	</insert>
 
 	<delete id="deleteUser" parameterType="int">

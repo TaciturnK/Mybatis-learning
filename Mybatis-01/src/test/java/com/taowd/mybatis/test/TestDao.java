@@ -53,6 +53,16 @@ public class TestDao {
 		logger.info("影响行数：" + result);
 	}
 
+	@Test
+	public void testAddUser2() {
+		// 注意此处默认不是自动提交事务的
+		SqlSession session = MybatisUtils.getFactory().openSession(true);// 创建自动提交事物的Session对象
+		String sql = "mapper.userMapper.insertUser2";
+		User user = new User("王五", 24);
+		int result = session.insert(sql, user);
+		logger.info("影响行数：" + result);
+	}
+
 	/**
 	 * 功能：测试更新功能
 	 */
