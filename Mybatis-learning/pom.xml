@@ -8,6 +8,7 @@
 	<description>Mybatis学习代码</description>
 	<modules>
 		<module>../Mybatis-01</module>
+		<module>../Mybatis_Spring</module>
 	</modules>
 
 	<dependencies>
