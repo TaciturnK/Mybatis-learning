@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +30,7 @@ public class TestUsers {
 	}
 
 	@Test
+	@Ignore
 	public void testGetUserSexCount() {
 		// 注意此处默认不是自动提交事务的
 		SqlSession session = MybatisUtils.getFactory().openSession(true);// 创建自动提交事物的Session对象
@@ -97,7 +99,8 @@ public class TestUsers {
 		User user = session.selectOne(statement, 1);
 		logger.info("查询结果：" + user.toString());
 
-		SqlSession session2 = MybatisUtils.getFactory().openSession(true);// 创建自动提交事物的Session对象
+		SqlSession session2 = MybatisUtils.getFactory().openSession(true);//
+		// 创建自动提交事物的Session对象
 		user = session2.selectOne(statement, 1);
 		logger.info("查询结果：" + user.toString());
 	}
