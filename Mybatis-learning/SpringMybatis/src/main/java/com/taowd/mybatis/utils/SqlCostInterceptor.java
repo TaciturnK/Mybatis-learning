@@ -21,7 +21,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 功能：Sql执行时间记录拦截器 
+ * 功能：Sql执行时间记录拦截器
+ * 
  * @author Taowd
  *
  */
@@ -53,7 +54,7 @@ public class SqlCostInterceptor implements Interceptor {
 			// 格式化Sql语句，去除换行符，替换参数
 			sql = formatSql(sql, parameterObject, parameterMappingList);
 
-			logger.info("SQL：[" + sql + "]执行耗时[" + sqlCost + "ms]");
+			logger.info("SQL：[ " + sql + " ]执行耗时[" + sqlCost + "ms]");
 		}
 	}
 

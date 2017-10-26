@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.55" errors="1" skipped="0" tests="2" name="com.taowd.test.BookTypeTest">
+<testsuite failures="0" time="0.602" errors="1" skipped="0" tests="2" name="com.taowd.test.BookTypeTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_13\jre\bin"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 8"/>
-    <property name="classworlds.conf" value="D:\workspace-sts-3.9.0.RELEASE\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf537551104964105189.tmp"/>
+    <property name="classworlds.conf" value="D:\workspace-sts-3.9.0.RELEASE\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf6198296371960051984.tmp"/>
     <property name="sun.jnu.encoding" value="GBK"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_13\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\app\Taowd\product\11.2.0\dbhome_1\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\VisualSVN\bin;C:\Program Files\Java\jdk1.7.0_13\bin;C:\Program Files\Java\jdk1.7.0_13\jre\bin;C:\Python27;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;D:\Program Files\OpenVPN\bin;C:\windows\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;D:\apache-maven-3.2.2\bin;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\HP\LoadRunner\strawberry-perl\perl\bin;C:\Program Files\Git\cmd;C:\Users\Taowd\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Docker Toolbox;C:\Users\Taowd\AppData\Local\GitHubDesktop\bin;D:\DevInstall\sts-3.9.0.RELEASE;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,8 +61,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.006" classname="com.taowd.test.BookTypeTest" name="test"/>
-  <testcase time="0.544" classname="com.taowd.test.BookTypeTest" name="testGetAllBookTypes">
+  <testcase time="0.007" classname="com.taowd.test.BookTypeTest" name="test"/>
+  <testcase time="0.595" classname="com.taowd.test.BookTypeTest" name="testGetAllBookTypes">
     <error message="
 ### Error querying database.  Cause: java.sql.SQLException: Error setting driver on UnpooledDataSource. Cause: java.lang.ClassNotFoundException: Cannot find class: ${driver}
 ### The error may exist in mapper/BookTypeMapper.xml

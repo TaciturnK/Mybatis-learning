@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.taowd.test.BookTypeTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.688 sec <<< FAILURE!
-testGetAllBookTypes(com.taowd.test.BookTypeTest)  Time elapsed: 0.544 sec  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.746 sec <<< FAILURE!
+testGetAllBookTypes(com.taowd.test.BookTypeTest)  Time elapsed: 0.595 sec  <<< ERROR!
 org.apache.ibatis.exceptions.PersistenceException: 
 ### Error querying database.  Cause: java.sql.SQLException: Error setting driver on UnpooledDataSource. Cause: java.lang.ClassNotFoundException: Cannot find class: ${driver}
 ### The error may exist in mapper/BookTypeMapper.xml

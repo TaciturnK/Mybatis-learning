@@ -1,6 +1,7 @@
 package com.taowd.test;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +22,7 @@ public class Test001 {
 
 	@Test
 	public void test01() {
-		logger.info("测试");
+		logger.info("����");
 	}
 
 	@Autowired
@@ -37,6 +38,15 @@ public class Test001 {
 
 		logger.info("Test--");
 
+	}
+
+	@Test
+	public void findAll() {
+		List<User> listUser = userService.findAll();
+
+		for (User user : listUser) {
+			logger.info("查询结果：" + user.toString());
+		}
 	}
 
 }
