@@ -12,6 +12,7 @@ import com.taowd.entry.BookType;
 public class TestMyBatisSpring {
 	private static final Logger logger = LoggerFactory.getLogger(TestMyBatisSpring.class);
 	private ApplicationContext ctx;
+
 	@Test
 	public void test01() {
 		ctx = new ClassPathXmlApplicationContext("ApplicationContext.xml");
